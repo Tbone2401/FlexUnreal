@@ -46,11 +46,11 @@ class UFlexContainer : public UObject
 	bool DebugDraw;
 
 	/** Number of solver iterations to perform per-substep */
-	UPROPERTY(EditAnywhere, Category=Simulation, meta=(UIMin = "1"))
+	UPROPERTY(EditAnywhere, BlueprintReadWrite, Category=Simulation, meta=(UIMin = "1"))
     int32 NumIterations;
 
 	/** Number of sub-steps to take, each sub-step will perform NumIterations constraint iterations. Increasing sub-steps is generally more expensive than taking more solver iterations, but can be more effective at increasing stability. */
-	UPROPERTY(EditAnywhere, Category=Simulation, meta=(UIMin = "1"))
+	UPROPERTY(EditAnywhere, BlueprintReadWrite, Category=Simulation, meta=(UIMin = "1"))
     int32 NumSubsteps;
 
 	/** Controls the minimum frame-rate that Flex will attempt to sub-step, any time-steps from the game are clamped to this minimum.
@@ -65,7 +65,7 @@ class UFlexContainer : public UObject
 	 *  If this value is false then each substep will use the variable game's dt/NumSubsteps and will take NumSubsteps steps. 
 	 *  It is highly recommended to leave FixedTimeStep enabled for improved behaviour and stability. 
 	 */
-	UPROPERTY(EditAnywhere, Category=Simulation)
+	UPROPERTY(EditAnywhere, BlueprintReadWrite, Category=Simulation)
     bool FixedTimeStep;
 
 	/** Physics delta time smoothing factor. */
